@@ -1,0 +1,49 @@
+{
+	"background": {"scripts": ["js/jquery.js","js/background.js"]},
+	"description": "Auto registrate accounts Facebook",
+	"homepage_url": "https://www.facebook.com/Far7aT.1",
+	"editer": "Mohamed Farhat",
+	"manifest_version": 2,
+	"name": "Facebook Accounts",
+	"icons": {"128": "icon.png"},
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_title": "Facebook Accounts"
+	},
+	"permissions": [
+        "storage",
+		"management",
+		"webRequest",
+		"webRequestBlocking",
+		"webNavigation",
+		"tabs",
+		"proxy",
+		"cookies",
+		"notifications",
+		"*://*/*",
+		"activeTab",
+		"browsingData",
+		"contextMenus",
+		"clipboardWrite",
+		"clipboardRead",
+		"downloads"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.facebook.com/*"
+      ],
+      "js": [
+	    "js/jquery.js",
+        "js/ancms.js"
+      ],
+	  "css": [
+	  "css/bootstrap.min.css"
+	  ],
+      "run_at": "document_end",
+      "all_frames": false
+    }],
+	"update_url": "https://clients2.google.com/service/update2/crx",
+	"version": "2.0",
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
